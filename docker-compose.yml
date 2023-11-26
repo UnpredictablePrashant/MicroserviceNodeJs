@@ -1,7 +1,10 @@
 version: "3"
 services:
   ms1:
-    container_name: microservice1
+    # container_name: microservice1
+    image: microservice1
+    # deploy:
+    #   replicas: 5
     build: 
       context: ./microservice1
       dockerfile: Dockerfile
@@ -10,18 +13,20 @@ services:
     depends_on:
     - ms2
   ms2:
-    container_name: microservice2
+    # container_name: microservice2
+    image: microservice2
     build: 
       context: ./microservice2
       dockerfile: Dockerfile
     ports:
-    - "3000:3000"
+    - "3001:3001"
     depends_on:
     - ms3
   ms3:
-    container_name: microservice3
+    # container_name: microservice3
+    image: microservice3
     build: 
       context: ./microservice3
       dockerfile: Dockerfile
     ports:
-    - "3000:3000"
+    - "3002:3002"
