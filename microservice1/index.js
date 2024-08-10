@@ -9,6 +9,12 @@ app.get('/', (req,res)=>{
     res.send('Hello World!')
 })
 
+app.get('/ms1/user', (req,res)=>{
+    res.send('Hello World from MS1 User!')
+})
+
+
+
 app.get('/ms2', async (req,res)=>{
     const apiRes = await fetch(`${process.env.URL}:3001/user`)
     const apiResJson = await apiRes.json()
